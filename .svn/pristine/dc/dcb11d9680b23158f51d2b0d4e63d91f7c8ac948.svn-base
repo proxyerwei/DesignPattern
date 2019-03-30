@@ -1,0 +1,17 @@
+package com.xywei.decorator;
+
+public class Test {
+
+	public void test1() {
+
+		Car car = new NewCar();
+		RunCar runCar = new RunCar(car);
+		FlyCar flyCar = new FlyCar(runCar);
+		//目标效果能跑能飞
+		flyCar.show();
+	}
+
+	public static void main(String[] args) {
+		new Test().test1();
+	}
+}

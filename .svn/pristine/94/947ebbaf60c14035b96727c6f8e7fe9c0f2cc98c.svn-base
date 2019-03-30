@@ -1,0 +1,22 @@
+package com.xywei.singleton;
+
+public class SingletonPersonThread implements Runnable {
+
+	private String personName = null;
+
+	public SingletonPersonThread() {
+	}
+
+	public SingletonPersonThread(String name) {
+		this.personName = (name == null ? "A" : name);
+	}
+
+	@Override
+	public void run() {
+		Person1 person1 = Person1.getInstance();
+		System.out.println(person1);
+		person1.setName(personName);
+		System.out.println(person1.getName());
+	}
+
+}
